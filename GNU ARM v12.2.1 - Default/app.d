@@ -104,6 +104,7 @@ app.o: ../app.c \
  D:\Cat_collar\cat_collar_code\yq-catcollar-mainboard\wiseconnect3_sdk_3.5.0\components\device\silabs\si91x\mcu\drivers\rom_driver\inc/rsi_packing.h \
  D:\Cat_collar\cat_collar_code\yq-catcollar-mainboard\filesystem/storage_api.h \
  D:\Cat_collar\cat_collar_code\yq-catcollar-mainboard\filesystem/filesystem_port.h \
+ ../wifi_app/wifi_ota_manager.h ../wifi_app/wifi_ota_config.h \
  D:\Cat_collar\cat_collar_code\yq-catcollar-mainboard\filesystem/syscfg_id.h \
  D:\Cat_collar\cat_collar_code\yq-catcollar-mainboard\letter_shell\shell_port/shell_port.h \
  D:\Cat_collar\cat_collar_code\yq-catcollar-mainboard\letter_shell/shell.h \
@@ -228,6 +229,8 @@ D:\Cat_collar\cat_collar_code\yq-catcollar-mainboard\wiseconnect3_sdk_3.5.0\comp
 D:\Cat_collar\cat_collar_code\yq-catcollar-mainboard\wiseconnect3_sdk_3.5.0\components\device\silabs\si91x\mcu\drivers\rom_driver\inc/rsi_packing.h:
 D:\Cat_collar\cat_collar_code\yq-catcollar-mainboard\filesystem/storage_api.h:
 D:\Cat_collar\cat_collar_code\yq-catcollar-mainboard\filesystem/filesystem_port.h:
+../wifi_app/wifi_ota_manager.h:
+../wifi_app/wifi_ota_config.h:
 D:\Cat_collar\cat_collar_code\yq-catcollar-mainboard\filesystem/syscfg_id.h:
 D:\Cat_collar\cat_collar_code\yq-catcollar-mainboard\letter_shell\shell_port/shell_port.h:
 D:\Cat_collar\cat_collar_code\yq-catcollar-mainboard\letter_shell/shell.h:

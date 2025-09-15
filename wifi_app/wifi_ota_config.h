@@ -1,19 +1,4 @@
-/*******************************************************************************
-* @file  wifi_ota_config.h
-* @brief WiFi OTA升级配置文件
-*******************************************************************************
-* # License
-* <b>Copyright 2024 Silicon Laboratories Inc. www.silabs.com</b>
-*******************************************************************************
-*
-* The licensor of this software is Silicon Laboratories Inc. Your use of this
-* software is governed by the terms of Silicon Labs Master Software License
-* Agreement (MSLA) available at
-* www.silabs.com/about-us/legal/master-software-license-agreement. This
-* software is distributed to you in Source Code format and is governed by the
-* sections of the MSLA applicable to Source Code.
-*
-******************************************************************************/
+// wifi_ota_config.h 的改进建议
 
 #ifndef WIFI_OTA_CONFIG_H
 #define WIFI_OTA_CONFIG_H
@@ -35,28 +20,22 @@
 #define TA_FW_UPDATE       1
 #define COMBINED_FW_UPDATE 2
 
-// 设置固件更新类型 (默认为TA固件更新)
+// 设置固件更新类型
 #define FW_UPDATE_TYPE  M4_FW_UPDATE
-// 是否加载证书到设备flash
+
+// 证书配置
 #define LOAD_CERTIFICATE 1
+#define USE_SDK_AWS_CERTIFICATE 1
 
-// 启用HTTPS支持
+// HTTP标志位定义
 #define HTTPS_SUPPORT BIT(0)
-
-// 启用IPv6 (默认使用IPv4)
 #define HTTPV6 BIT(3)
-
-// 启用HTTP POST大数据特性
 #define HTTP_POST_DATA BIT(5)
-
-// 使用HTTP版本1.1
 #define HTTP_V_1_1 BIT(6)
-
-// 启用用户定义的HTTP内容类型
 #define HTTP_USER_DEFINED_CONTENT_TYPE BIT(7)
 
-// 设置证书索引 (0, 1, 2)
-#define CERTIFICATE_INDEX 0
+// 证书索引 (确保与加载的证书索引一致) - 使用OTA专用的宏名避免冲突
+#define OTA_CERTIFICATE_INDEX 0
 
 /*==============================================*/
 /**
@@ -71,18 +50,26 @@
 #define FIRMWARE_VERSION_FILE "firmware/version.txt"
 #define FIRMWARE_BINARY_FILE  "firmware/yq-catcollar-mainboard.bin"
 
-// HTTP配置
-#define OTA_FLAGS       (HTTPS_SUPPORT | HTTP_V_1_1 | HTTP_POST_DATA)
-#define OTA_HTTP_PORT   443
-#define OTA_TIMEOUT     1200000
-#define DNS_TIMEOUT     10000
-#define MAX_DNS_RETRY_COUNT 3
+// HTTP配置 - 针对错误 0x1bb49 的修复尝试
+// 选项1: 启用HTTPS (需要正确的证书)
+#define OTA_FLAGS_HTTPS   (HTTPS_SUPPORT | HTTP_V_1_1)
+#define OTA_HTTP_PORT_HTTPS 443
+
+// 选项2: 临时使用HTTP进行调试 (如果S3支持)
+#define OTA_FLAGS_HTTP    (HTTP_V_1_1)
+#define OTA_HTTP_PORT_HTTP 80
+
+// 当前使用的配置 - 可以在调试时切换
+#define OTA_FLAGS       OTA_FLAGS_HTTPS
+#define OTA_HTTP_PORT   OTA_HTTP_PORT_HTTPS
+
+// 超时配置 - 使用OTA专用的宏名避免冲突
+#define OTA_TIMEOUT         1200000  // 20分钟
+#define OTA_DNS_TIMEOUT     10000    // 10秒
+#define OTA_MAX_DNS_RETRY_COUNT 3
 
 // 版本检查间隔 (秒)
 #define VERSION_CHECK_INTERVAL 3600  // 1小时检查一次
-
-// 使用SDK提供的AWS证书
-#define USE_SDK_AWS_CERTIFICATE 1
 
 /*==============================================*/
 /**
@@ -99,13 +86,13 @@
 
 /*==============================================*/
 /**
- * HTTP扩展头
+ * HTTP扩展头和认证
  */
 
-// 用于AWS S3访问的HTTP扩展头 (如果需要认证)
+// 用于AWS S3访问的HTTP扩展头
 #define HTTP_EXTENDED_HEADER NULL
 
-// 用户名和密码 (对于S3公共访问可以为空)
+// S3公共访问不需要用户名密码
 #define OTA_USERNAME ""
 #define OTA_PASSWORD ""
 
@@ -115,60 +102,61 @@
  */
 
 // 启用OTA调试打印
-#define OTA_DEBUG_ENABLE 0
+#define OTA_DEBUG_ENABLE 1
 
 #if OTA_DEBUG_ENABLE
-// 使用更安全的日志输出方式
 #define OTA_LOG_INFO(...)  do { \
-    osDelay(10); \
     printf("[OTA INFO] " __VA_ARGS__); \
-    fflush(stdout); \
-    osDelay(10); \
 } while(0)
 
 #define OTA_LOG_ERROR(...) do { \
-    osDelay(10); \
     printf("[OTA ERROR] " __VA_ARGS__); \
-    fflush(stdout); \
-    osDelay(10); \
 } while(0)
 
 #define OTA_LOG_DEBUG(...) do { \
-    osDelay(10); \
     printf("[OTA DEBUG] " __VA_ARGS__); \
-    fflush(stdout); \
-    osDelay(10); \
 } while(0)
 #else
-// 即使禁用调试，也保留基本的INFO日志，但使用简化输出
-#define OTA_LOG_INFO(...)  do { printf(__VA_ARGS__); } while(0)
-#define OTA_LOG_ERROR(...) do { printf("ERROR: " __VA_ARGS__); } while(0)
+#define OTA_LOG_INFO(...)
+#define OTA_LOG_ERROR(...)
 #define OTA_LOG_DEBUG(...)
 #endif
 
 /*==============================================*/
 /**
- * OTA状态定义
+ * 证书相关配置
  */
 
-typedef enum {
-  OTA_STATE_IDLE = 0,
-  OTA_STATE_CHECKING_VERSION,
-  OTA_STATE_DOWNLOADING,
-  OTA_STATE_INSTALLING,
-  OTA_STATE_COMPLETE,
-  OTA_STATE_ERROR
-} ota_state_t;
+// 如果使用HTTPS，确保包含正确的AWS证书
+#ifdef HTTPS_SUPPORT
 
-typedef enum {
-  OTA_ERROR_NONE = 0,
-  OTA_ERROR_NETWORK,
-  OTA_ERROR_DNS_RESOLVE,
-  OTA_ERROR_HTTP_REQUEST,
-  OTA_ERROR_VERSION_PARSE,
-  OTA_ERROR_DOWNLOAD_FAILED,
-  OTA_ERROR_INSTALL_FAILED,
-  OTA_ERROR_TIMEOUT
-} ota_error_t;
+// AWS使用的根证书选项：
+// 1. Amazon Root CA 1 (推荐)
+// 2. Starfield Services Root Certificate Authority - G2
+// 3. DigiCert Global Root CA
+
+// 确保在 ota_load_certificates() 中加载了正确的证书
+extern const unsigned char aws_root_ca_1[];        // Amazon Root CA 1
+extern const unsigned char aws_starfield_ca[];     // Starfield CA (当前使用)
+
+// 证书选择 - 可以尝试不同的证书
+#define USE_AMAZON_ROOT_CA_1    0  // 设置为1使用Amazon Root CA 1
+#define USE_STARFIELD_CA        1  // 设置为1使用Starfield CA
+
+#endif // HTTPS_SUPPORT
+
+/*==============================================*/
+/**
+ * 错误处理配置
+ */
+
+// 下载重试次数
+#define OTA_DOWNLOAD_RETRY_COUNT 3
+
+// 重试间隔 (毫秒)
+#define OTA_RETRY_DELAY_MS 5000
+
+// 网络错误自动重试
+#define OTA_AUTO_RETRY_ON_NETWORK_ERROR 1
 
 #endif // WIFI_OTA_CONFIG_H

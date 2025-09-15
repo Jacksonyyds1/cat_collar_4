@@ -57,6 +57,7 @@
 #include "mlx90632.h"
 #include "spi_flash.h"
 #include "storage_api.h"
+#include "wifi_app/wifi_ota_manager.h"
 #include "syscfg_id.h"
 #include "shell_port.h"
 
@@ -340,6 +341,8 @@ LOG_HEAP_DELTA(5);
   leds_play(GREEN_LED, LEDS_SLOW_BLINK);
 
   wifi_connect_test();
+
+  ota_test_https_connection();
 
   // https_upload_test();
 

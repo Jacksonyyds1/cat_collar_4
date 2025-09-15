@@ -21,10 +21,36 @@
 #include "sl_status.h"
 #include "sl_wifi.h"
 #include "sl_wifi_callback_framework.h"
-#include "wifi_ota_config.h"
 #include "cmsis_os2.h"
 #include <stdbool.h>
 #include <stdint.h>
+
+/*==============================================*/
+/**
+ * OTA状态定义 - 必须在包含配置文件之前定义
+ */
+
+typedef enum {
+  OTA_STATE_IDLE = 0,
+  OTA_STATE_CHECKING_VERSION,
+  OTA_STATE_DOWNLOADING,
+  OTA_STATE_INSTALLING,
+  OTA_STATE_COMPLETE,
+  OTA_STATE_ERROR
+} ota_state_t;
+
+typedef enum {
+  OTA_ERROR_NONE = 0,
+  OTA_ERROR_NETWORK,
+  OTA_ERROR_DNS_RESOLVE,
+  OTA_ERROR_HTTP_REQUEST,
+  OTA_ERROR_VERSION_PARSE,
+  OTA_ERROR_DOWNLOAD_FAILED,
+  OTA_ERROR_INSTALL_FAILED,
+  OTA_ERROR_TIMEOUT
+} ota_error_t;
+
+#include "wifi_ota_config.h"
 
 /*==============================================*/
 /**
@@ -199,5 +225,7 @@ sl_status_t ota_download_firmware(void);
  * @return sl_status_t 状态码
  */
 sl_status_t ota_load_certificates(void);
+
+sl_status_t ota_test_https_connection(void);
 
 #endif // WIFI_OTA_MANAGER_H
