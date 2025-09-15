@@ -65,12 +65,12 @@
  */
 
 // AWS S3存储桶配置
-#define AWS_S3_BUCKET_HOST    "catcollar-firmware-ota.s3.ap-east-1.amazonaws.com"
-#define AWS_S3_REGION         "ap-east-1"
+#define AWS_S3_BUCKET_HOST    "cat-firmware-bucket-001.s3.us-east-2.amazonaws.com"
+#define AWS_S3_REGION         "us-east-2"
 
 // 固件文件配置
-#define FIRMWARE_VERSION_FILE "version.txt"
-#define FIRMWARE_BINARY_FILE  "catcollar-mainboard.bin"
+#define FIRMWARE_VERSION_FILE "firmware/version.txt"
+#define FIRMWARE_BINARY_FILE  "firmware/yq-catcollar-mainboard.bin"
 
 // HTTP配置
 #define OTA_FLAGS       HTTPS_SUPPORT

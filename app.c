@@ -339,7 +339,7 @@ LOG_HEAP_DELTA(5);
   leds_play(BLUE_LED, LEDS_SLOW_BLINK);
   leds_play(GREEN_LED, LEDS_SLOW_BLINK);
 
-  // wifi_connect_test();
+  wifi_connect_test();
 
   // https_upload_test();
 

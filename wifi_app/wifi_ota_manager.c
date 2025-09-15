@@ -450,13 +450,33 @@ sl_status_t ota_fetch_version_info(char *version_buffer, size_t buffer_size)
   sl_status_t status;
   int32_t dns_retry_count = MAX_DNS_RETRY_COUNT;
 
+  OTA_LOG_INFO("Starting DNS resolution for %s\r\n", AWS_S3_BUCKET_HOST);
+
   do {
+    OTA_LOG_DEBUG("DNS attempt %ld/%ld\r\n", (long)(MAX_DNS_RETRY_COUNT - dns_retry_count + 1), (long)MAX_DNS_RETRY_COUNT);
+
     status = sl_net_dns_resolve_hostname(AWS_S3_BUCKET_HOST, DNS_TIMEOUT, SL_NET_DNS_TYPE_IPV4, &dns_query_rsp);
+
+    if (status != SL_STATUS_OK) {
+      OTA_LOG_ERROR("DNS attempt failed: 0x%lx\r\n", status);
+      if (dns_retry_count > 1) {
+        OTA_LOG_INFO("Retrying DNS in 2 seconds...\r\n");
+        osDelay(2000);  // 等待2秒再重试
+      }
+    }
+
     dns_retry_count--;
   } while ((dns_retry_count != 0) && (status != SL_STATUS_OK));
 
   if (status != SL_STATUS_OK) {
-    OTA_LOG_ERROR("DNS resolution failed for %s: 0x%lx\r\n", AWS_S3_BUCKET_HOST, status);
+    OTA_LOG_ERROR("DNS resolution failed for %s after %ld attempts: 0x%lx\r\n",
+                  AWS_S3_BUCKET_HOST, (long)MAX_DNS_RETRY_COUNT, status);
+
+    // 尝试使用备用方法：直接使用IP地址
+    OTA_LOG_INFO("Trying fallback method with direct IP...\r\n");
+
+    // 你可以通过ping或nslookup获得S3的IP地址作为备用
+    // 这里暂时返回错误，让用户知道需要检查网络
     return status;
   }
 

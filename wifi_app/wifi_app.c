@@ -50,6 +50,8 @@
 #include "app_log.h"
 #include "blinky.h"
 #include "wifi_app.h"
+#include "wifi_ota_manager.h"
+#include "sl_net_dns.h"
 
 // WLAN include file for configuration
 
@@ -414,6 +416,49 @@ void wifi_app_task()
       case WIFI_APP_IPCONFIG_DONE_STATE: {
         wifi_app_clear_event(WIFI_APP_IPCONFIG_DONE_STATE);
 
+        // 简单的OTA测试代码
+        static bool ota_test_done = false;
+        if (!ota_test_done) {
+          osDelay(5000); // 等待网络稳定
+
+          app_log_info("=== OTA Test Starting ===\r\n");
+          app_log_info("WiFi connected, testing OTA system...\r\n");
+
+          // 初始化OTA
+          if (ota_manager_init() == SL_STATUS_OK) {
+            app_log_info(" OTA Manager initialized\r\n");
+
+            // 加载证书
+            if (ota_load_certificates() == SL_STATUS_OK) {
+              app_log_info("Certificates loaded\r\n");
+
+              // 启动OTA任务
+              if (ota_manager_start_task() == SL_STATUS_OK) {
+                app_log_info("OTA Task started\r\n");
+
+                // 启用自动检查
+                ota_set_auto_check(true);
+
+                app_log_info("Starting version check...\r\n");
+                app_log_info(" Checking: %s\r\n", AWS_S3_BUCKET_HOST);
+                app_log_info(" Current version: %s\r\n", CURRENT_FIRMWARE_VERSION);
+
+                // 检查更新
+                ota_check_for_updates();
+
+                ota_test_done = true;
+                app_log_info("OTA test initiated successfully!\r\n");
+              } else {
+                app_log_error("OTA Task start failed\r\n");
+              }
+            } else {
+              app_log_error("Certificate load failed\r\n");
+            }
+          } else {
+            app_log_error("OTA Manager init failed\r\n");
+          }
+        }
+
         osSemaphoreRelease(wlan_thread_sem);
         LOG_PRINT("WIFI App IPCONFIG Done State\r\n");
       } break;
@@ -515,8 +560,8 @@ sl_status_t wifi_client_connect(char *ssid, char *password, sl_wifi_security_t s
 }
 
 bsp_wifi_info_t test_access_point_info = {
-  .ssid = "cooper",
-  .pwd = "12348888",
+  .ssid = "SW_TEST_TEAM",
+  .pwd = "SWTester0613",
   // .ssid = "memobirdteam",
   // .pwd = "memointre123",
 };
@@ -542,8 +587,63 @@ void wifi_connect_test(void)
       ip.type            = dhcp_ip_address.type;
       ip.ip.v4.value     = dhcp_ip_address.ip.v4.ip_address.value;
       print_sl_ip_address(&ip);
-      catcollar_wifi_connection_set_state(CATCOLLAR_WIFI_CONNECTED); 
+      catcollar_wifi_connection_set_state(CATCOLLAR_WIFI_CONNECTED);
       app_log_info("Connected to test access point successfully\r\n");
+
+      // 延迟后启动OTA测试
+      osDelay(3000);  // 增加延迟确保网络完全就绪
+
+      app_log_info("=== Network Test Starting ===\r\n");
+      app_log_info("WiFi connected, testing network connectivity...\r\n");
+
+      // 先测试DNS解析一个简单的域名
+      sl_ip_address_t test_dns = { 0 };
+      sl_status_t dns_test = sl_net_dns_resolve_hostname("www.baidu.com", 10000, SL_NET_DNS_TYPE_IPV4, &test_dns);
+      if (dns_test == SL_STATUS_OK) {
+        uint32_t ip = test_dns.ip.v4.value;
+        app_log_info("DNS test successful: www.baidu.com = %ld.%ld.%ld.%ld\r\n",
+                     ip & 0xFF, (ip >> 8) & 0xFF, (ip >> 16) & 0xFF, (ip >> 24) & 0xFF);
+      } else {
+        app_log_error("DNS test failed: 0x%lx\r\n", dns_test);
+      }
+
+      osDelay(1000);
+
+      app_log_info("=== OTA Test Starting ===\r\n");
+      app_log_info("WiFi connected, testing OTA system...\r\n");
+
+      // 初始化OTA
+      if (ota_manager_init() == SL_STATUS_OK) {
+        app_log_info("OTA Manager initialized\r\n");
+
+        // 加载证书
+        if (ota_load_certificates() == SL_STATUS_OK) {
+          app_log_info("Certificates loaded\r\n");
+
+          // 启动OTA任务
+          if (ota_manager_start_task() == SL_STATUS_OK) {
+            app_log_info("OTA Task started\r\n");
+
+            // 启用自动检查
+            ota_set_auto_check(true);
+
+            app_log_info("Starting version check...\r\n");
+            app_log_info("Checking: %s\r\n", AWS_S3_BUCKET_HOST);
+            app_log_info("Current version: %s\r\n", CURRENT_FIRMWARE_VERSION);
+
+            // 检查更新
+            ota_check_for_updates();
+
+            app_log_info("OTA test initiated successfully!\r\n");
+          } else {
+            app_log_error("OTA Task start failed\r\n");
+          }
+        } else {
+          app_log_error("Certificate load failed\r\n");
+        }
+      } else {
+        app_log_error("OTA Manager init failed\r\n");
+      }
     }
   }
 }
