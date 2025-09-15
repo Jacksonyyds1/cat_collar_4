@@ -39,45 +39,6 @@ simplicity_sdk_2025.6.0/util/third_party/freertos/kernel/portable/GCC/ARM_CM4F \
 simplicity_sdk_2025.6.0/util/third_party/freertos/kernel/portable/MemMang \
 spiflash \
 wifi_app \
-wifi_http_otaf_soc/GNU\ ARM\ v12.2.1\ -\ Default \
-wifi_http_otaf_soc/GNU\ ARM\ v12.2.1\ -\ Default/autogen \
-wifi_http_otaf_soc/GNU\ ARM\ v12.2.1\ -\ Default/simplicity_sdk_2025.6.1/platform/CMSIS/RTOS2/Source \
-wifi_http_otaf_soc/GNU\ ARM\ v12.2.1\ -\ Default/simplicity_sdk_2025.6.1/platform/common/src \
-wifi_http_otaf_soc/GNU\ ARM\ v12.2.1\ -\ Default/simplicity_sdk_2025.6.1/platform/service/mem_pool/src \
-wifi_http_otaf_soc/GNU\ ARM\ v12.2.1\ -\ Default/simplicity_sdk_2025.6.1/platform/service/sl_main/src/rtos \
-wifi_http_otaf_soc/GNU\ ARM\ v12.2.1\ -\ Default/simplicity_sdk_2025.6.1/platform/service/sl_main/src \
-wifi_http_otaf_soc/GNU\ ARM\ v12.2.1\ -\ Default/simplicity_sdk_2025.6.1/util/third_party/freertos/cmsis/Source \
-wifi_http_otaf_soc/GNU\ ARM\ v12.2.1\ -\ Default/simplicity_sdk_2025.6.1/util/third_party/freertos/kernel \
-wifi_http_otaf_soc/GNU\ ARM\ v12.2.1\ -\ Default/simplicity_sdk_2025.6.1/util/third_party/freertos/kernel/portable/GCC/ARM_CM4F \
-wifi_http_otaf_soc/GNU\ ARM\ v12.2.1\ -\ Default/simplicity_sdk_2025.6.1/util/third_party/freertos/kernel/portable/MemMang \
-wifi_http_otaf_soc/GNU\ ARM\ v12.2.1\ -\ Default/wiseconnect3_sdk_3.5.1/components/board/silabs/src \
-wifi_http_otaf_soc/GNU\ ARM\ v12.2.1\ -\ Default/wiseconnect3_sdk_3.5.1/components/common/src \
-wifi_http_otaf_soc/GNU\ ARM\ v12.2.1\ -\ Default/wiseconnect3_sdk_3.5.1/components/device/silabs/si91x/mcu/core/chip/src/iPMU_prog/iPMU_dotc \
-wifi_http_otaf_soc/GNU\ ARM\ v12.2.1\ -\ Default/wiseconnect3_sdk_3.5.1/components/device/silabs/si91x/mcu/core/chip/src \
-wifi_http_otaf_soc/GNU\ ARM\ v12.2.1\ -\ Default/wiseconnect3_sdk_3.5.1/components/device/silabs/si91x/mcu/core/common/src \
-wifi_http_otaf_soc/GNU\ ARM\ v12.2.1\ -\ Default/wiseconnect3_sdk_3.5.1/components/device/silabs/si91x/mcu/core/config/src \
-wifi_http_otaf_soc/GNU\ ARM\ v12.2.1\ -\ Default/wiseconnect3_sdk_3.5.1/components/device/silabs/si91x/mcu/drivers/cmsis_driver \
-wifi_http_otaf_soc/GNU\ ARM\ v12.2.1\ -\ Default/wiseconnect3_sdk_3.5.1/components/device/silabs/si91x/mcu/drivers/peripheral_drivers/src \
-wifi_http_otaf_soc/GNU\ ARM\ v12.2.1\ -\ Default/wiseconnect3_sdk_3.5.1/components/device/silabs/si91x/mcu/drivers/service/clock_manager/src \
-wifi_http_otaf_soc/GNU\ ARM\ v12.2.1\ -\ Default/wiseconnect3_sdk_3.5.1/components/device/silabs/si91x/mcu/drivers/systemlevel/src \
-wifi_http_otaf_soc/GNU\ ARM\ v12.2.1\ -\ Default/wiseconnect3_sdk_3.5.1/components/device/silabs/si91x/mcu/drivers/unified_api/src \
-wifi_http_otaf_soc/GNU\ ARM\ v12.2.1\ -\ Default/wiseconnect3_sdk_3.5.1/components/device/silabs/si91x/mcu/hal/src \
-wifi_http_otaf_soc/GNU\ ARM\ v12.2.1\ -\ Default/wiseconnect3_sdk_3.5.1/components/device/silabs/si91x/wireless/ahb_interface/src \
-wifi_http_otaf_soc/GNU\ ARM\ v12.2.1\ -\ Default/wiseconnect3_sdk_3.5.1/components/device/silabs/si91x/wireless/errno/src \
-wifi_http_otaf_soc/GNU\ ARM\ v12.2.1\ -\ Default/wiseconnect3_sdk_3.5.1/components/device/silabs/si91x/wireless/firmware_upgrade \
-wifi_http_otaf_soc/GNU\ ARM\ v12.2.1\ -\ Default/wiseconnect3_sdk_3.5.1/components/device/silabs/si91x/wireless/host_mcu/si91x \
-wifi_http_otaf_soc/GNU\ ARM\ v12.2.1\ -\ Default/wiseconnect3_sdk_3.5.1/components/device/silabs/si91x/wireless/icmp \
-wifi_http_otaf_soc/GNU\ ARM\ v12.2.1\ -\ Default/wiseconnect3_sdk_3.5.1/components/device/silabs/si91x/wireless/memory \
-wifi_http_otaf_soc/GNU\ ARM\ v12.2.1\ -\ Default/wiseconnect3_sdk_3.5.1/components/device/silabs/si91x/wireless/sl_net/src \
-wifi_http_otaf_soc/GNU\ ARM\ v12.2.1\ -\ Default/wiseconnect3_sdk_3.5.1/components/device/silabs/si91x/wireless/socket/src \
-wifi_http_otaf_soc/GNU\ ARM\ v12.2.1\ -\ Default/wiseconnect3_sdk_3.5.1/components/device/silabs/si91x/wireless/src \
-wifi_http_otaf_soc/GNU\ ARM\ v12.2.1\ -\ Default/wiseconnect3_sdk_3.5.1/components/protocol/wifi/si91x \
-wifi_http_otaf_soc/GNU\ ARM\ v12.2.1\ -\ Default/wiseconnect3_sdk_3.5.1/components/protocol/wifi/src \
-wifi_http_otaf_soc/GNU\ ARM\ v12.2.1\ -\ Default/wiseconnect3_sdk_3.5.1/components/service/network_manager/src \
-wifi_http_otaf_soc/GNU\ ARM\ v12.2.1\ -\ Default/wiseconnect3_sdk_3.5.1/components/sli_si91x_wifi_event_handler/src \
-wifi_http_otaf_soc/GNU\ ARM\ v12.2.1\ -\ Default/wiseconnect3_sdk_3.5.1/components/sli_wifi_command_engine/src \
-wifi_http_otaf_soc \
-wifi_http_otaf_soc/autogen \
 wiseconnect3_sdk_3.5.0/components/board/silabs/src \
 wiseconnect3_sdk_3.5.0/components/common/src \
 wiseconnect3_sdk_3.5.0/components/console \

@@ -64,6 +64,8 @@ c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7
                               ./common.o (snprintf)
 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-sprintf.o)
                               ./sensor_data_service/chekr_record.o (sprintf)
+c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-sscanf.o)
+                              ./wifi_app/wifi_ota_manager.o (sscanf)
 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-stdio.o)
                               c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-findfp.o) (__sread)
 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-vprintf.o)
@@ -160,8 +162,12 @@ c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7
                               c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-dtoa.o) (_Balloc)
 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-svfprintf.o)
                               c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-snprintf.o) (_svfprintf_r)
+c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-svfscanf.o)
+                              c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-sscanf.o) (__ssvfscanf_r)
 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-vfprintf.o)
                               c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-fprintf.o) (_vfprintf_r)
+c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-vfscanf_i.o)
+                              c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-svfscanf.o) (_scanf_chars)
 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-fflush.o)
                               c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-findfp.o) (_fflush_r)
 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-fvwrite.o)
@@ -170,8 +176,10 @@ c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7
                               c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-wsetup.o) (__smakebuf_r)
 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-putc.o)
                               c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-putchar.o) (_putc_r)
-c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-sscanf.o)
-                              c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-tzset_r.o) (siscanf)
+c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-sccl.o)
+                              c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-svfscanf.o) (__sccl)
+c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-ungetc.o)
+                              c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-svfscanf.o) (__submore)
 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-signal.o)
                               c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-abort.o) (raise)
 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-gettzinfo.o)
@@ -194,14 +202,6 @@ c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7
                               c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-svfprintf.o) (_realloc_r)
 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-wctomb_r.o)
                               c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-locale.o) (__ascii_wctomb)
-c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-svfscanf.o)
-                              c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-sscanf.o) (__ssvfscanf_r)
-c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-vfscanf_i.o)
-                              c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-svfscanf.o) (_scanf_chars)
-c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-sccl.o)
-                              c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-svfscanf.o) (__sccl)
-c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-ungetc.o)
-                              c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-svfscanf.o) (__submore)
 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-month_lengths.o)
                               c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-tzcalc_limits.o) (__month_lengths)
 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-msizer.o)
@@ -2337,6 +2337,203 @@ Discarded input sections
  .debug_frame   0x00000000      0x11c ./wifi_app/wifi_http_event.o
  .ARM.attributes
                 0x00000000       0x32 ./wifi_app/wifi_http_event.o
+ .text          0x00000000        0x0 ./wifi_app/wifi_ota_integration_example.o
+ .data          0x00000000        0x0 ./wifi_app/wifi_ota_integration_example.o
+ .bss           0x00000000        0x0 ./wifi_app/wifi_ota_integration_example.o
+ .rodata.ota_state_callback_impl.str1.1
+                0x00000000       0xb7 ./wifi_app/wifi_ota_integration_example.o
+ .text.ota_state_callback_impl
+                0x00000000      0x18c ./wifi_app/wifi_ota_integration_example.o
+ .rodata.ota_progress_callback_impl.str1.1
+                0x00000000       0x20 ./wifi_app/wifi_ota_integration_example.o
+ .text.ota_progress_callback_impl
+                0x00000000       0x6c ./wifi_app/wifi_ota_integration_example.o
+ .rodata.wifi_ota_init.str1.1
+                0x00000000       0xe1 ./wifi_app/wifi_ota_integration_example.o
+ .text.wifi_ota_init
+                0x00000000      0x188 ./wifi_app/wifi_ota_integration_example.o
+ .rodata.wifi_ota_check_command.str1.1
+                0x00000000       0xc7 ./wifi_app/wifi_ota_integration_example.o
+ .text.wifi_ota_check_command
+                0x00000000      0x178 ./wifi_app/wifi_ota_integration_example.o
+ .rodata.wifi_ota_update_command.str1.1
+                0x00000000       0x99 ./wifi_app/wifi_ota_integration_example.o
+ .text.wifi_ota_update_command
+                0x00000000      0x10c ./wifi_app/wifi_ota_integration_example.o
+ .rodata.wifi_ota_status_command.str1.1
+                0x00000000       0xbd ./wifi_app/wifi_ota_integration_example.o
+ .text.wifi_ota_status_command
+                0x00000000      0x24c ./wifi_app/wifi_ota_integration_example.o
+ .text.wifi_ota_integration_example
+                0x00000000        0x2 ./wifi_app/wifi_ota_integration_example.o
+ .rodata.str1.1
+                0x00000000      0x152 ./wifi_app/wifi_ota_integration_example.o
+ .bss.last_reported_progress.0
+                0x00000000        0x4 ./wifi_app/wifi_ota_integration_example.o
+ .rodata        0x00000000       0x50 ./wifi_app/wifi_ota_integration_example.o
+ .debug_info    0x00000000     0x1cd4 ./wifi_app/wifi_ota_integration_example.o
+ .debug_abbrev  0x00000000      0x2e8 ./wifi_app/wifi_ota_integration_example.o
+ .debug_loc     0x00000000      0x3f9 ./wifi_app/wifi_ota_integration_example.o
+ .debug_aranges
+                0x00000000       0x50 ./wifi_app/wifi_ota_integration_example.o
+ .debug_ranges  0x00000000       0x58 ./wifi_app/wifi_ota_integration_example.o
+ .debug_line    0x00000000     0x13b0 ./wifi_app/wifi_ota_integration_example.o
+ .debug_str     0x00000000      0xadf ./wifi_app/wifi_ota_integration_example.o
+ .comment       0x00000000       0x46 ./wifi_app/wifi_ota_integration_example.o
+ .debug_frame   0x00000000      0x118 ./wifi_app/wifi_ota_integration_example.o
+ .ARM.attributes
+                0x00000000       0x32 ./wifi_app/wifi_ota_integration_example.o
+ .text          0x00000000        0x0 ./wifi_app/wifi_ota_manager.o
+ .data          0x00000000        0x0 ./wifi_app/wifi_ota_manager.o
+ .bss           0x00000000        0x0 ./wifi_app/wifi_ota_manager.o
+ .rodata.ota_set_state.str1.1
+                0x00000000       0x27 ./wifi_app/wifi_ota_manager.o
+ .text.ota_set_state
+                0x00000000       0x4c ./wifi_app/wifi_ota_manager.o
+ .rodata.ota_fw_update_response_handler.str1.1
+                0x00000000       0x5d ./wifi_app/wifi_ota_manager.o
+ .text.ota_fw_update_response_handler
+                0x00000000       0x3c ./wifi_app/wifi_ota_manager.o
+ .rodata.ota_fetch_version_info.part.0.str1.1
+                0x00000000       0xbf ./wifi_app/wifi_ota_manager.o
+ .text.ota_fetch_version_info.part.0
+                0x00000000       0xa0 ./wifi_app/wifi_ota_manager.o
+ .rodata.ota_manager_init.str1.1
+                0x00000000       0x8d ./wifi_app/wifi_ota_manager.o
+ .text.ota_manager_init
+                0x00000000       0x64 ./wifi_app/wifi_ota_manager.o
+ .rodata.ota_manager_start_task.str1.1
+                0x00000000       0x77 ./wifi_app/wifi_ota_manager.o
+ .text.ota_manager_start_task
+                0x00000000       0x58 ./wifi_app/wifi_ota_manager.o
+ .rodata.ota_manager_stop_task.str1.1
+                0x00000000       0x42 ./wifi_app/wifi_ota_manager.o
+ .text.ota_manager_stop_task
+                0x00000000       0x50 ./wifi_app/wifi_ota_manager.o
+ .text.ota_get_current_state
+                0x00000000        0xc ./wifi_app/wifi_ota_manager.o
+ .text.ota_get_last_error
+                0x00000000        0xc ./wifi_app/wifi_ota_manager.o
+ .text.ota_get_current_version
+                0x00000000        0x8 ./wifi_app/wifi_ota_manager.o
+ .text.ota_get_latest_version
+                0x00000000        0x8 ./wifi_app/wifi_ota_manager.o
+ .text.ota_is_update_available
+                0x00000000        0xc ./wifi_app/wifi_ota_manager.o
+ .text.ota_set_progress_callback
+                0x00000000        0xc ./wifi_app/wifi_ota_manager.o
+ .text.ota_set_state_callback
+                0x00000000        0xc ./wifi_app/wifi_ota_manager.o
+ .rodata.ota_set_auto_check.str1.1
+                0x00000000       0x2c ./wifi_app/wifi_ota_manager.o
+ .text.ota_set_auto_check
+                0x00000000       0x28 ./wifi_app/wifi_ota_manager.o
+ .text.ota_get_download_progress
+                0x00000000       0x1c ./wifi_app/wifi_ota_manager.o
+ .rodata.ota_compare_versions.str1.1
+                0x00000000        0x9 ./wifi_app/wifi_ota_manager.o
+ .text.ota_compare_versions
+                0x00000000       0x80 ./wifi_app/wifi_ota_manager.o
+ .rodata.ota_check_for_updates.str1.1
+                0x00000000      0x138 ./wifi_app/wifi_ota_manager.o
+ .text.ota_check_for_updates
+                0x00000000      0x13c ./wifi_app/wifi_ota_manager.o
+ .text.ota_force_check_update
+                0x00000000       0x10 ./wifi_app/wifi_ota_manager.o
+ .rodata.ota_task_main.str1.1
+                0x00000000       0xa1 ./wifi_app/wifi_ota_manager.o
+ .text.ota_task_main
+                0x00000000       0x90 ./wifi_app/wifi_ota_manager.o
+ .text.ota_fetch_version_info
+                0x00000000        0xc ./wifi_app/wifi_ota_manager.o
+ .rodata.ota_download_firmware.str1.1
+                0x00000000       0xd2 ./wifi_app/wifi_ota_manager.o
+ .text.ota_download_firmware
+                0x00000000      0x12c ./wifi_app/wifi_ota_manager.o
+ .rodata.ota_start_update.str1.1
+                0x00000000       0xe5 ./wifi_app/wifi_ota_manager.o
+ .text.ota_start_update
+                0x00000000       0x98 ./wifi_app/wifi_ota_manager.o
+ .rodata.ota_load_certificates.str1.1
+                0x00000000       0x77 ./wifi_app/wifi_ota_manager.o
+ .text.ota_load_certificates
+                0x00000000       0x34 ./wifi_app/wifi_ota_manager.o
+ .rodata.str1.1
+                0x00000000       0x45 ./wifi_app/wifi_ota_manager.o
+ .rodata.ota_task_attributes
+                0x00000000       0x24 ./wifi_app/wifi_ota_manager.o
+ .bss.state_callback
+                0x00000000        0x4 ./wifi_app/wifi_ota_manager.o
+ .bss.progress_callback
+                0x00000000        0x4 ./wifi_app/wifi_ota_manager.o
+ .bss.ota_callback_status
+                0x00000000        0x4 ./wifi_app/wifi_ota_manager.o
+ .bss.ota_response_received
+                0x00000000        0x1 ./wifi_app/wifi_ota_manager.o
+ .bss.ota_task_running
+                0x00000000        0x1 ./wifi_app/wifi_ota_manager.o
+ .bss.ota_semaphore
+                0x00000000        0x4 ./wifi_app/wifi_ota_manager.o
+ .bss.ota_task_handle
+                0x00000000        0x4 ./wifi_app/wifi_ota_manager.o
+ .bss.ota_manager
+                0x00000000       0x54 ./wifi_app/wifi_ota_manager.o
+ .rodata.aws_starfield_ca
+                0x00000000      0xb4d ./wifi_app/wifi_ota_manager.o
+ .rodata        0x00000000       0x18 ./wifi_app/wifi_ota_manager.o
+ .debug_info    0x00000000     0x222b ./wifi_app/wifi_ota_manager.o
+ .debug_abbrev  0x00000000      0x521 ./wifi_app/wifi_ota_manager.o
+ .debug_loc     0x00000000      0x961 ./wifi_app/wifi_ota_manager.o
+ .debug_aranges
+                0x00000000       0xd0 ./wifi_app/wifi_ota_manager.o
+ .debug_ranges  0x00000000      0x110 ./wifi_app/wifi_ota_manager.o
+ .debug_line    0x00000000      0xf17 ./wifi_app/wifi_ota_manager.o
+ .debug_str     0x00000000     0x1ecc ./wifi_app/wifi_ota_manager.o
+ .comment       0x00000000       0x46 ./wifi_app/wifi_ota_manager.o
+ .debug_frame   0x00000000      0x240 ./wifi_app/wifi_ota_manager.o
+ .ARM.attributes
+                0x00000000       0x32 ./wifi_app/wifi_ota_manager.o
+ .text          0x00000000        0x0 ./wifi_app/wifi_ota_simple_example.o
+ .data          0x00000000        0x0 ./wifi_app/wifi_ota_simple_example.o
+ .bss           0x00000000        0x0 ./wifi_app/wifi_ota_simple_example.o
+ .rodata.simple_ota_progress_callback.str1.1
+                0x00000000       0x32 ./wifi_app/wifi_ota_simple_example.o
+ .text.simple_ota_progress_callback
+                0x00000000       0x64 ./wifi_app/wifi_ota_simple_example.o
+ .rodata.simple_ota_state_callback.str1.1
+                0x00000000       0xcc ./wifi_app/wifi_ota_simple_example.o
+ .text.simple_ota_state_callback
+                0x00000000      0x19c ./wifi_app/wifi_ota_simple_example.o
+ .rodata.simple_ota_init.str1.1
+                0x00000000       0xbe ./wifi_app/wifi_ota_simple_example.o
+ .text.simple_ota_init
+                0x00000000      0x188 ./wifi_app/wifi_ota_simple_example.o
+ .rodata.simple_ota_check_update.str1.1
+                0x00000000       0x73 ./wifi_app/wifi_ota_simple_example.o
+ .text.simple_ota_check_update
+                0x00000000      0x11c ./wifi_app/wifi_ota_simple_example.o
+ .rodata.simple_ota_start_update.str1.1
+                0x00000000       0x3b ./wifi_app/wifi_ota_simple_example.o
+ .text.simple_ota_start_update
+                0x00000000       0xcc ./wifi_app/wifi_ota_simple_example.o
+ .text.integrate_ota_to_wifi_app
+                0x00000000       0x30 ./wifi_app/wifi_ota_simple_example.o
+ .bss.ota_initialized.0
+                0x00000000        0x1 ./wifi_app/wifi_ota_simple_example.o
+ .bss.last_percent.1
+                0x00000000        0x4 ./wifi_app/wifi_ota_simple_example.o
+ .debug_info    0x00000000     0x15a0 ./wifi_app/wifi_ota_simple_example.o
+ .debug_abbrev  0x00000000      0x266 ./wifi_app/wifi_ota_simple_example.o
+ .debug_loc     0x00000000      0x46c ./wifi_app/wifi_ota_simple_example.o
+ .debug_aranges
+                0x00000000       0x48 ./wifi_app/wifi_ota_simple_example.o
+ .debug_ranges  0x00000000       0x38 ./wifi_app/wifi_ota_simple_example.o
+ .debug_line    0x00000000      0xf3b ./wifi_app/wifi_ota_simple_example.o
+ .debug_str     0x00000000      0xa7c ./wifi_app/wifi_ota_simple_example.o
+ .comment       0x00000000       0x46 ./wifi_app/wifi_ota_simple_example.o
+ .debug_frame   0x00000000       0xdc ./wifi_app/wifi_ota_simple_example.o
+ .ARM.attributes
+                0x00000000       0x32 ./wifi_app/wifi_ota_simple_example.o
  .text          0x00000000        0x0 ./wiseconnect3_sdk_3.5.0/components/board/silabs/src/rsi_board.o
  .data          0x00000000        0x0 ./wiseconnect3_sdk_3.5.0/components/board/silabs/src/rsi_board.o
  .bss           0x00000000        0x0 ./wiseconnect3_sdk_3.5.0/components/board/silabs/src/rsi_board.o
@@ -10726,6 +10923,15 @@ Discarded input sections
  .bss           0x00000000        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-sprintf.o)
  .text._sprintf_r
                 0x00000000       0x38 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-sprintf.o)
+ .text          0x00000000        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-sscanf.o)
+ .data          0x00000000        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-sscanf.o)
+ .bss           0x00000000        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-sscanf.o)
+ .text.sscanf   0x00000000       0x54 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-sscanf.o)
+ .text._sscanf_r
+                0x00000000       0x54 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-sscanf.o)
+ .debug_frame   0x00000000       0x80 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-sscanf.o)
+ .ARM.attributes
+                0x00000000       0x32 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-sscanf.o)
  .text          0x00000000        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-stdio.o)
  .data          0x00000000        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-stdio.o)
  .bss           0x00000000        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-stdio.o)
@@ -11020,6 +11226,20 @@ Discarded input sections
  .bss           0x00000000        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-svfprintf.o)
  .text.__ssprint_r
                 0x00000000       0xfa c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-svfprintf.o)
+ .text          0x00000000        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-svfscanf.o)
+ .data          0x00000000        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-svfscanf.o)
+ .bss           0x00000000        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-svfscanf.o)
+ .text._sungetc_r
+                0x00000000       0x76 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-svfscanf.o)
+ .text.__ssrefill_r
+                0x00000000       0x3a c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-svfscanf.o)
+ .rodata.__ssvfscanf_r.str1.1
+                0x00000000        0x4 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-svfscanf.o)
+ .text.__ssvfscanf_r
+                0x00000000      0x2ec c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-svfscanf.o)
+ .debug_frame   0x00000000       0x74 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-svfscanf.o)
+ .ARM.attributes
+                0x00000000       0x32 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-svfscanf.o)
  .text          0x00000000        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-vfprintf.o)
  .data          0x00000000        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-vfprintf.o)
  .bss           0x00000000        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-vfprintf.o)
@@ -11027,6 +11247,21 @@ Discarded input sections
                 0x00000000       0x1a c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-vfprintf.o)
  .text.vfprintf
                 0x00000000       0x14 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-vfprintf.o)
+ .text          0x00000000        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-vfscanf_i.o)
+ .data          0x00000000        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-vfscanf_i.o)
+ .bss           0x00000000        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-vfscanf_i.o)
+ .text._scanf_chars
+                0x00000000       0xb4 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-vfscanf_i.o)
+ .rodata._scanf_i.str1.1
+                0x00000000       0x12 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-vfscanf_i.o)
+ .text._scanf_i
+                0x00000000      0x200 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-vfscanf_i.o)
+ .rodata.str1.1
+                0x00000000        0x9 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-vfscanf_i.o)
+ .rodata        0x00000000        0xc c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-vfscanf_i.o)
+ .debug_frame   0x00000000       0x64 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-vfscanf_i.o)
+ .ARM.attributes
+                0x00000000       0x32 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-vfscanf_i.o)
  .text          0x00000000        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-fflush.o)
  .data          0x00000000        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-fflush.o)
  .bss           0x00000000        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-fflush.o)
@@ -11050,15 +11285,24 @@ Discarded input sections
  .debug_frame   0x00000000       0x3c c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-putc.o)
  .ARM.attributes
                 0x00000000       0x32 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-putc.o)
- .text          0x00000000        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-sscanf.o)
- .data          0x00000000        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-sscanf.o)
- .bss           0x00000000        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-sscanf.o)
- .text.sscanf   0x00000000       0x54 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-sscanf.o)
- .text._sscanf_r
-                0x00000000       0x54 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-sscanf.o)
- .debug_frame   0x00000000       0x80 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-sscanf.o)
+ .text          0x00000000        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-sccl.o)
+ .data          0x00000000        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-sccl.o)
+ .bss           0x00000000        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-sccl.o)
+ .text.__sccl   0x00000000       0x72 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-sccl.o)
+ .debug_frame   0x00000000       0x2c c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-sccl.o)
  .ARM.attributes
-                0x00000000       0x32 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-sscanf.o)
+                0x00000000       0x32 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-sccl.o)
+ .text          0x00000000        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-ungetc.o)
+ .data          0x00000000        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-ungetc.o)
+ .bss           0x00000000        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-ungetc.o)
+ .text.__submore
+                0x00000000       0x74 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-ungetc.o)
+ .text._ungetc_r
+                0x00000000       0xfe c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-ungetc.o)
+ .text.ungetc   0x00000000       0x10 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-ungetc.o)
+ .debug_frame   0x00000000       0x5c c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-ungetc.o)
+ .ARM.attributes
+                0x00000000       0x32 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-ungetc.o)
  .text          0x00000000        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-signal.o)
  .data          0x00000000        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-signal.o)
  .bss           0x00000000        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-signal.o)
@@ -11133,53 +11377,6 @@ Discarded input sections
  .bss           0x00000000        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-wctomb_r.o)
  .text._wctomb_r
                 0x00000000       0x14 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-wctomb_r.o)
- .text          0x00000000        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-svfscanf.o)
- .data          0x00000000        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-svfscanf.o)
- .bss           0x00000000        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-svfscanf.o)
- .text._sungetc_r
-                0x00000000       0x76 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-svfscanf.o)
- .text.__ssrefill_r
-                0x00000000       0x3a c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-svfscanf.o)
- .rodata.__ssvfscanf_r.str1.1
-                0x00000000        0x4 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-svfscanf.o)
- .text.__ssvfscanf_r
-                0x00000000      0x2ec c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-svfscanf.o)
- .debug_frame   0x00000000       0x74 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-svfscanf.o)
- .ARM.attributes
-                0x00000000       0x32 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-svfscanf.o)
- .text          0x00000000        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-vfscanf_i.o)
- .data          0x00000000        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-vfscanf_i.o)
- .bss           0x00000000        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-vfscanf_i.o)
- .text._scanf_chars
-                0x00000000       0xb4 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-vfscanf_i.o)
- .rodata._scanf_i.str1.1
-                0x00000000       0x12 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-vfscanf_i.o)
- .text._scanf_i
-                0x00000000      0x200 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-vfscanf_i.o)
- .rodata.str1.1
-                0x00000000        0x9 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-vfscanf_i.o)
- .rodata        0x00000000        0xc c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-vfscanf_i.o)
- .debug_frame   0x00000000       0x64 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-vfscanf_i.o)
- .ARM.attributes
-                0x00000000       0x32 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-vfscanf_i.o)
- .text          0x00000000        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-sccl.o)
- .data          0x00000000        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-sccl.o)
- .bss           0x00000000        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-sccl.o)
- .text.__sccl   0x00000000       0x72 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-sccl.o)
- .debug_frame   0x00000000       0x2c c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-sccl.o)
- .ARM.attributes
-                0x00000000       0x32 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-sccl.o)
- .text          0x00000000        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-ungetc.o)
- .data          0x00000000        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-ungetc.o)
- .bss           0x00000000        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-ungetc.o)
- .text.__submore
-                0x00000000       0x74 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-ungetc.o)
- .text._ungetc_r
-                0x00000000       0xfe c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-ungetc.o)
- .text.ungetc   0x00000000       0x10 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-ungetc.o)
- .debug_frame   0x00000000       0x5c c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-ungetc.o)
- .ARM.attributes
-                0x00000000       0x32 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-ungetc.o)
  .text          0x00000000        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-month_lengths.o)
  .data          0x00000000        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-month_lengths.o)
  .bss           0x00000000        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-month_lengths.o)
@@ -11313,6 +11510,9 @@ LOAD ./simplicity_sdk_2025.6.0/util/third_party/freertos/kernel/portable/MemMang
 LOAD ./spiflash/spi_flash.o
 LOAD ./wifi_app/wifi_app.o
 LOAD ./wifi_app/wifi_http_event.o
+LOAD ./wifi_app/wifi_ota_integration_example.o
+LOAD ./wifi_app/wifi_ota_manager.o
+LOAD ./wifi_app/wifi_ota_simple_example.o
 LOAD ./wiseconnect3_sdk_3.5.0/components/board/silabs/src/rsi_board.o
 LOAD ./wiseconnect3_sdk_3.5.0/components/common/src/sl_utility.o
 LOAD ./wiseconnect3_sdk_3.5.0/components/console/console.o
