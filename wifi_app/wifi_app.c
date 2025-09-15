@@ -579,8 +579,8 @@ sl_status_t wifi_client_connect(char *ssid, char *password, sl_wifi_security_t s
 bsp_wifi_info_t test_access_point_info = {
   .ssid = "SW_TEST_TEAM",
   .pwd = "SWTester0613",
-  // .ssid = "memobirdteam",
-  // .pwd = "memointre123",
+ // .ssid = "memobirdteam",
+  //.pwd = "memointre123",
 };
 
 void wifi_connect_test(void)
