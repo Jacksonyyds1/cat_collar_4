@@ -36,8 +36,7 @@
 #define COMBINED_FW_UPDATE 2
 
 // 设置固件更新类型 (默认为TA固件更新)
-#define FW_UPDATE_TYPE TA_FW_UPDATE
-
+#define FW_UPDATE_TYPE  M4_FW_UPDATE
 // 是否加载证书到设备flash
 #define LOAD_CERTIFICATE 1
 
@@ -73,11 +72,11 @@
 #define FIRMWARE_BINARY_FILE  "firmware/yq-catcollar-mainboard.bin"
 
 // HTTP配置
-#define OTA_FLAGS       HTTPS_SUPPORT
+#define OTA_FLAGS       (HTTPS_SUPPORT | HTTP_V_1_1 | HTTP_POST_DATA)
 #define OTA_HTTP_PORT   443
-#define OTA_TIMEOUT     600000
-#define DNS_TIMEOUT     20000
-#define MAX_DNS_RETRY_COUNT 5
+#define OTA_TIMEOUT     1200000
+#define DNS_TIMEOUT     10000
+#define MAX_DNS_RETRY_COUNT 3
 
 // 版本检查间隔 (秒)
 #define VERSION_CHECK_INTERVAL 3600  // 1小时检查一次
@@ -116,15 +115,34 @@
  */
 
 // 启用OTA调试打印
-#define OTA_DEBUG_ENABLE 1
+#define OTA_DEBUG_ENABLE 0
 
 #if OTA_DEBUG_ENABLE
-#define OTA_LOG_INFO(...)  printf("[OTA INFO] " __VA_ARGS__)
-#define OTA_LOG_ERROR(...) printf("[OTA ERROR] " __VA_ARGS__)
-#define OTA_LOG_DEBUG(...) printf("[OTA DEBUG] " __VA_ARGS__)
+// 使用更安全的日志输出方式
+#define OTA_LOG_INFO(...)  do { \
+    osDelay(10); \
+    printf("[OTA INFO] " __VA_ARGS__); \
+    fflush(stdout); \
+    osDelay(10); \
+} while(0)
+
+#define OTA_LOG_ERROR(...) do { \
+    osDelay(10); \
+    printf("[OTA ERROR] " __VA_ARGS__); \
+    fflush(stdout); \
+    osDelay(10); \
+} while(0)
+
+#define OTA_LOG_DEBUG(...) do { \
+    osDelay(10); \
+    printf("[OTA DEBUG] " __VA_ARGS__); \
+    fflush(stdout); \
+    osDelay(10); \
+} while(0)
 #else
-#define OTA_LOG_INFO(...)
-#define OTA_LOG_ERROR(...)
+// 即使禁用调试，也保留基本的INFO日志，但使用简化输出
+#define OTA_LOG_INFO(...)  do { printf(__VA_ARGS__); } while(0)
+#define OTA_LOG_ERROR(...) do { printf("ERROR: " __VA_ARGS__); } while(0)
 #define OTA_LOG_DEBUG(...)
 #endif
 

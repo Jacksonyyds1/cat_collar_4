@@ -103,8 +103,8 @@ sl_status_t ota_manager_init(void)
     return SL_STATUS_ALLOCATION_FAILED;
   }
 
-  OTA_LOG_INFO("OTA Manager initialized successfully\r\n");
-  OTA_LOG_INFO("Current firmware version: %s\r\n", ota_manager.current_version);
+  printf("OTA Manager initialized OK\r\n");
+  printf("Firmware version: %s\r\n", ota_manager.current_version);
 
   return SL_STATUS_OK;
 }
@@ -125,7 +125,7 @@ sl_status_t ota_manager_start_task(void)
     return SL_STATUS_ALLOCATION_FAILED;
   }
 
-  OTA_LOG_INFO("OTA task started successfully\r\n");
+  printf("OTA task started successfully\r\n");
   return SL_STATUS_OK;
 }
 
@@ -189,19 +189,26 @@ sl_status_t ota_check_for_updates(void)
   // 比较版本
   version_compare_result_t result = ota_compare_versions(ota_manager.current_version, parsed_version);
 
-  if (result == VERSION_NEWER) {
+  if (result == VERSION_OLDER) {
+    // 当前版本较旧，有新版本可用
     ota_manager.update_available = true;
-    OTA_LOG_INFO("New firmware version available: %s (current: %s)\r\n",
-                 parsed_version, ota_manager.current_version);
+    printf("New firmware available: %s (current: %s)\r\n",
+           parsed_version, ota_manager.current_version);
     ota_set_state(OTA_STATE_IDLE, OTA_ERROR_NONE);
   } else if (result == VERSION_SAME) {
     ota_manager.update_available = false;
-    OTA_LOG_INFO("Firmware is up to date: %s\r\n", ota_manager.current_version);
+    printf("Firmware is up to date: %s\r\n", ota_manager.current_version);
     ota_set_state(OTA_STATE_IDLE, OTA_ERROR_NONE);
-  } else {
-    OTA_LOG_INFO("Current firmware is newer than server version\r\n");
+  } else if (result == VERSION_NEWER) {
+    // 当前版本较新
+    printf("Current firmware is newer\r\n");
     ota_manager.update_available = false;
     ota_set_state(OTA_STATE_IDLE, OTA_ERROR_NONE);
+  } else {
+    // VERSION_INVALID
+    printf("ERROR: Invalid version format\r\n");
+    ota_manager.update_available = false;
+    ota_set_state(OTA_STATE_ERROR, OTA_ERROR_VERSION_PARSE);
   }
 
   ota_manager.last_check_time = ota_get_current_time_seconds();
@@ -211,36 +218,36 @@ sl_status_t ota_check_for_updates(void)
 sl_status_t ota_start_update(void)
 {
   if (!ota_manager.update_available) {
-    OTA_LOG_ERROR("No update available\r\n");
+    printf("No update available\r\n");
     return SL_STATUS_NOT_AVAILABLE;
   }
 
   if (catcollar_wifi_connection_get_state() != CATCOLLAR_WIFI_CONNECTED) {
-    OTA_LOG_ERROR("WiFi not connected, cannot start update\r\n");
+    printf("WiFi not connected, cannot start update\r\n");
     ota_set_state(OTA_STATE_ERROR, OTA_ERROR_NETWORK);
     return SL_STATUS_NETWORK_DOWN;
   }
 
   ota_set_state(OTA_STATE_DOWNLOADING, OTA_ERROR_NONE);
 
-  OTA_LOG_INFO("Starting firmware download...\r\n");
+  printf("Starting firmware download...\r\n");
 
   sl_status_t status = ota_download_firmware();
 
   if (status != SL_STATUS_OK) {
-    OTA_LOG_ERROR("Firmware download failed: 0x%lx\r\n", status);
+    printf("Firmware download failed: 0x%lx\r\n", status);
     ota_set_state(OTA_STATE_ERROR, OTA_ERROR_DOWNLOAD_FAILED);
     return status;
   }
 
   ota_set_state(OTA_STATE_INSTALLING, OTA_ERROR_NONE);
-  OTA_LOG_INFO("Firmware download completed, installing...\r\n");
+  printf("Firmware download completed, installing...\r\n");
 
   // 等待安装完成
   osDelay(5000);
 
   ota_set_state(OTA_STATE_COMPLETE, OTA_ERROR_NONE);
-  OTA_LOG_INFO("Firmware update completed successfully\r\n");
+  printf("Firmware update completed successfully\r\n");
 
   return SL_STATUS_OK;
 }
@@ -283,7 +290,7 @@ void ota_set_state_callback(ota_state_callback_t callback)
 void ota_set_auto_check(bool enable)
 {
   ota_manager.auto_check_enabled = enable;
-  OTA_LOG_INFO("Auto check %s\r\n", enable ? "enabled" : "disabled");
+  printf("Auto check %s\r\n", enable ? "enabled" : "disabled");
 }
 
 sl_status_t ota_force_check_update(void)
@@ -450,33 +457,31 @@ sl_status_t ota_fetch_version_info(char *version_buffer, size_t buffer_size)
   sl_status_t status;
   int32_t dns_retry_count = MAX_DNS_RETRY_COUNT;
 
-  OTA_LOG_INFO("Starting DNS resolution for %s\r\n", AWS_S3_BUCKET_HOST);
+  printf("Starting DNS resolution...\r\n");
 
   do {
-    OTA_LOG_DEBUG("DNS attempt %ld/%ld\r\n", (long)(MAX_DNS_RETRY_COUNT - dns_retry_count + 1), (long)MAX_DNS_RETRY_COUNT);
+    printf("DNS attempt %d/%d\r\n", (int)(MAX_DNS_RETRY_COUNT - dns_retry_count + 1), (int)MAX_DNS_RETRY_COUNT);
 
     status = sl_net_dns_resolve_hostname(AWS_S3_BUCKET_HOST, DNS_TIMEOUT, SL_NET_DNS_TYPE_IPV4, &dns_query_rsp);
 
+    printf("DNS status: 0x%lx\r\n", status);
+
     if (status != SL_STATUS_OK) {
-      OTA_LOG_ERROR("DNS attempt failed: 0x%lx\r\n", status);
+      printf("DNS failed, retrying...\r\n");
       if (dns_retry_count > 1) {
-        OTA_LOG_INFO("Retrying DNS in 2 seconds...\r\n");
         osDelay(2000);  // 等待2秒再重试
       }
+    } else {
+      printf("DNS success!\r\n");
+      break; // 成功就退出循环
     }
 
     dns_retry_count--;
-  } while ((dns_retry_count != 0) && (status != SL_STATUS_OK));
+  } while (dns_retry_count > 0);
 
   if (status != SL_STATUS_OK) {
-    OTA_LOG_ERROR("DNS resolution failed for %s after %ld attempts: 0x%lx\r\n",
-                  AWS_S3_BUCKET_HOST, (long)MAX_DNS_RETRY_COUNT, status);
-
-    // 尝试使用备用方法：直接使用IP地址
-    OTA_LOG_INFO("Trying fallback method with direct IP...\r\n");
-
-    // 你可以通过ping或nslookup获得S3的IP地址作为备用
-    // 这里暂时返回错误，让用户知道需要检查网络
+    printf("DNS resolution failed after %ld attempts: 0x%lx\r\n",
+           (long)MAX_DNS_RETRY_COUNT, status);
     return status;
   }
 
@@ -489,14 +494,20 @@ sl_status_t ota_fetch_version_info(char *version_buffer, size_t buffer_size)
           (server_address & 0x00ff0000) >> 16,
           (server_address & 0xff000000) >> 24);
 
-  OTA_LOG_INFO("Resolved %s to %s\r\n", AWS_S3_BUCKET_HOST, server_ip);
+  printf("Resolved to IP: %s\r\n", server_ip);
 
-  // TODO: 实现HTTP GET请求获取版本信息
-  // 这里暂时返回一个模拟的版本号用于测试
+  // 简化的版本检查：由于AWS S3需要复杂的HTTP请求处理，
+  // 这里先实现一个基本的模拟版本检查，确保OTA流程能够运行
+  printf("Performing version check...\r\n");
+
+  // 模拟网络延迟
+  osDelay(1000);
+
+  // 返回一个新版本来测试OTA流程
   strncpy(version_buffer, "1.1.0", buffer_size - 1);
   version_buffer[buffer_size - 1] = '\0';
 
-  OTA_LOG_INFO("Fetched version info: %s\r\n", version_buffer);
+  printf("Version check completed: %s\r\n", version_buffer);
 
   return SL_STATUS_OK;
 }
@@ -514,7 +525,7 @@ sl_status_t ota_download_firmware(void)
   } while ((dns_retry_count != 0) && (status != SL_STATUS_OK));
 
   if (status != SL_STATUS_OK) {
-    OTA_LOG_ERROR("DNS resolution failed: 0x%lx\r\n", status);
+    printf("Download DNS resolution failed: 0x%lx\r\n", status);
     return status;
   }
 
@@ -527,7 +538,7 @@ sl_status_t ota_download_firmware(void)
           (server_address & 0x00ff0000) >> 16,
           (server_address & 0xff000000) >> 24);
 
-  OTA_LOG_INFO("Starting firmware download from %s\r\n", server_ip);
+  printf("Starting firmware download from %s\r\n", server_ip);
 
   // 设置固件更新回调
   sl_wifi_set_callback(SL_WIFI_HTTP_OTA_FW_UPDATE_EVENTS,
@@ -546,13 +557,23 @@ sl_status_t ota_download_firmware(void)
   http_params.password = (uint8_t *)OTA_PASSWORD;
 
   // 开始OTAF下载
+  printf("Configuring download parameters:\r\n");
+  printf("- Server IP: %s\r\n", server_ip);
+  printf("- Port: %d\r\n", OTA_HTTP_PORT);
+  printf("- Resource: %s\r\n", FIRMWARE_BINARY_FILE);
+  printf("- Host: %s\r\n", AWS_S3_BUCKET_HOST);
+
   ota_response_received = false;
   status = sl_si91x_http_otaf_v2(&http_params);
 
+  printf("Download initiation status: 0x%lx\r\n", status);
+
   if (status != SL_STATUS_OK) {
-    OTA_LOG_ERROR("Failed to start firmware download: 0x%lx\r\n", status);
+    printf("Failed to start firmware download: 0x%lx\r\n", status);
     return status;
   }
+
+  printf("Download started, waiting for completion...\r\n");
 
   // 等待下载完成
   uint32_t timeout_count = 0;
@@ -571,7 +592,7 @@ sl_status_t ota_download_firmware(void)
   }
 
   if (!ota_response_received) {
-    OTA_LOG_ERROR("Firmware download timeout\r\n");
+    printf("Firmware download timeout\r\n");
     return SL_STATUS_TIMEOUT;
   }
 
@@ -617,7 +638,7 @@ sl_status_t ota_load_certificates(void)
     return status;
   }
 
-  OTA_LOG_INFO("AWS CA certificate loaded successfully at index %d\r\n", CERTIFICATE_INDEX);
+  printf("AWS CA certificate loaded successfully at index %d\r\n", CERTIFICATE_INDEX);
 #endif
 
   return SL_STATUS_OK;

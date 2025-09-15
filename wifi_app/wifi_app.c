@@ -51,6 +51,7 @@
 #include "blinky.h"
 #include "wifi_app.h"
 #include "wifi_ota_manager.h"
+#include "wifi_ota_config.h"
 #include "sl_net_dns.h"
 
 // WLAN include file for configuration
@@ -446,8 +447,24 @@ void wifi_app_task()
                 // 检查更新
                 ota_check_for_updates();
 
+                // 等待版本检查完成
+                osDelay(3000);
+
+                // 如果有更新可用，开始下载测试
+                if (ota_is_update_available()) {
+                  app_log_info("Update available, starting download test...\r\n");
+                  sl_status_t download_status = ota_start_update();
+                  if (download_status == SL_STATUS_OK) {
+                    app_log_info("Firmware download and update completed!\r\n");
+                  } else {
+                    app_log_error("Firmware download failed: 0x%lx\r\n", download_status);
+                  }
+                } else {
+                  app_log_info("No update available for download test\r\n");
+                }
+
                 ota_test_done = true;
-                app_log_info("OTA test initiated successfully!\r\n");
+                app_log_info("OTA test completed!\r\n");
               } else {
                 app_log_error("OTA Task start failed\r\n");
               }
@@ -634,7 +651,23 @@ void wifi_connect_test(void)
             // 检查更新
             ota_check_for_updates();
 
-            app_log_info("OTA test initiated successfully!\r\n");
+            // 等待版本检查完成
+            osDelay(3000);
+
+            // 如果有更新可用，开始下载测试
+            if (ota_is_update_available()) {
+              app_log_info("Update available, starting download test...\r\n");
+              sl_status_t download_status = ota_start_update();
+              if (download_status == SL_STATUS_OK) {
+                app_log_info("Firmware download and update completed!\r\n");
+              } else {
+                app_log_error("Firmware download failed: 0x%lx\r\n", download_status);
+              }
+            } else {
+              app_log_info("No update available for download test\r\n");
+            }
+
+            app_log_info("OTA test completed!\r\n");
           } else {
             app_log_error("OTA Task start failed\r\n");
           }

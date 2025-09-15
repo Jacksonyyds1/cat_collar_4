@@ -40,7 +40,9 @@ static const sl_wifi_device_configuration_t cat_wifi_client_config =
                                    | SL_SI91X_FEAT_WPS_DISABLE
 #endif
                                    ),
-               .tcp_ip_feature_bit_map = (SL_SI91X_TCP_IP_FEAT_DHCPV4_CLIENT | SL_SI91X_TCP_IP_FEAT_EXTENSION_VALID),
+               .tcp_ip_feature_bit_map = (SL_SI91X_TCP_IP_FEAT_DHCPV4_CLIENT | SL_SI91X_TCP_IP_FEAT_HTTP_CLIENT
+                                          | SL_SI91X_TCP_IP_FEAT_EXTENSION_VALID | SL_SI91X_TCP_IP_FEAT_SSL
+                                          | SL_SI91X_TCP_IP_FEAT_DNS_CLIENT),
                .custom_feature_bit_map = (SL_SI91X_CUSTOM_FEAT_EXTENTION_VALID | SL_SI91X_CUSTOM_FEAT_EXTENTION_VALID),
                .ext_custom_feature_bit_map =
                  (SL_SI91X_EXT_FEAT_LOW_POWER_MODE | SL_SI91X_EXT_FEAT_XTAL_CLK | MEMORY_CONFIG
@@ -50,7 +52,8 @@ static const sl_wifi_device_configuration_t cat_wifi_client_config =
 #endif // SLI_SI917
                   | SL_SI91X_EXT_FEAT_BT_CUSTOM_FEAT_ENABLE),
                .bt_feature_bit_map         = (SL_SI91X_BT_RF_TYPE | SL_SI91X_ENABLE_BLE_PROTOCOL),
-               .ext_tcp_ip_feature_bit_map = (SL_SI91X_CONFIG_FEAT_EXTENTION_VALID),
+               .ext_tcp_ip_feature_bit_map = (SL_SI91X_EXT_FEAT_HTTP_OTAF_SUPPORT | SL_SI91X_EXT_TCP_IP_SSL_16K_RECORD
+                                              | SL_SI91X_CONFIG_FEAT_EXTENTION_VALID),
                //!ENABLE_BLE_PROTOCOL in bt_feature_bit_map
                .ble_feature_bit_map =
                  ((SL_SI91X_BLE_MAX_NBR_PERIPHERALS(RSI_BLE_MAX_NBR_PERIPHERALS)
