@@ -1,0 +1,150 @@
+#ifndef BLE_DATA_PROGRESS_H
+#define BLE_DATA_PROGRESS_H
+
+#include <stdint.h>
+#include <stdbool.h>
+#include "FreeRTOS.h"
+#include "task.h"
+#include "queue.h"
+
+extern QueueHandle_t bluetooth_data_queue;
+
+// private interfaces
+
+#define SET_EPOCH_RTC_FRAME_LEN            (0x0e)
+#define GET_EPOCH_RTC_FRAME_LEN            (0x07)
+#define SET_DOG_COLLAR_POS_FRAME_LEN       (0x07)
+#define SET_DOG_SIZE_FRAME_LEN             (0x07)
+#define READ_DASHBOARD_INFO_FRAME_LEN      (0x07)
+#define START_STOP_REC_SESSION_FRAME_LEN   (0x0f)
+#define READ_REC_SESSION_DETAILS_FRAME_LEN (0x0f)
+#define READ_REC_SESSION_DATA_FRAME_LEN    (0x13)
+#define GET_DEVICE_MAC_ADDR_FRAME_LEN      (0x07)
+#define GET_DEVICE_SYSTEM_INFO_FRAME_LEN   (0x07)
+#define FACTORY_RESET_FRAME_LEN            (0x07)
+#define REBOOT_FRAME_LEN                   (0x07)
+#define BLE_STATUS_SHOW_FRAME_LEN          (0x07)
+#define BLE_CONNECTED_SHOW_FRAME_LEN       (0x07)
+#define START_STOP_PERIODIC_DASH_FRAME_LEN (0x8)
+
+// CHEKR_CONT_REC
+#define START_STOP_RAW_DATA_HARVESTING_FRAME_LEN    (0x10)
+#define START_STOP_BLE_LIVE_RAW_IMU_FRAME_LEN       (0x07)
+#define GET_CONT_REC_SESSION_STATUS_FRAME_LEN       (0x0f)
+#define READ_CONT_REC_SESSION_DETAILS_FRAME_LEN     (0x0f)
+#define READ_RAW_DATA_CHUNK_FRAME_LEN               (0x11)
+#define DELETE_RAW_DATA_CHUNK_FRAME_LEN             (0x11)
+#define DELETE_REC_SESSION_FRAME_LEN                (0x0f)
+#define READ_ACTIVITY_DATA_CHUNK_FRAME_LEN          (0x11)
+
+#define CONT_REC_MAX_CHUNKS 10 // Maximum number of chunks in a continuous recording session
+// CHEKR_CONT_REC
+
+#define NESTLE_A2_DOG_COLLAR 	 	 (0x02)
+#define NESTLE_A3_DOG_COLLAR 		 (0x03)
+#define NESTLE_FRANKEN_DOG_COLLAR 	 (0x04)
+#define NESTLE_FRANKEN_BOWL 		 (0x05)
+#define NESTLE_COMMERCIAL_PET_COLLAR (0x06)
+#define NESTLE_COMMERCIAL_PET_BOWL   (0x07)
+typedef enum {
+	GET_DEVICE_MAC_ADDR = 1,
+	GET_DEVICE_SYSTEM_INFO,
+	GET_USER_INFO,
+	SET_DOG_COLLAR_POSITION,
+	GET_EPOCH_RTC,
+	SET_EPOCH_RTC,
+	START_STOP_RAW_DATA_HARVESTING,
+	START_STOP_ACTIVITY_DATA_HARVESTING,
+	START_STOP_PERIODIC_DASHBOARD_STATUS_INFO,
+	BLE_STATUS_SHOW,
+	BLE_CONNECTED_SHOW,
+	CAT_FACTORY_RESET,
+	REBOOT,
+	SYSTEM_ALARM_STATUS_NOTIF,
+	SYSTEM_GENERAL_NOTIF,
+	START_STOP_RECORDING_SESSION,
+	READ_REC_SESSION_DETAILS_RAW_IMU,
+	READ_REC_SESSION_DATA_RAW_IMU,
+	READ_REC_SESSION_DETAILS_ACTIVITY,
+	READ_REC_SESSION_DATA_ACTIVITY,
+	READ_DEVICE_LOG_INFO,
+	READ_DASHBOARD_INFO,
+	START_BLE_LIVE_ACTIVITY_SESSION,
+	START_BLE_LIVE_RAW_IMU_RECORDING,
+	START_DISCO_LIGHTS,
+	SET_DOG_SIZE,
+	// CHEKR_CONT_REC
+	GET_CONT_REC_SESSION_STATUS,
+	READ_CONT_REC_SESSION_DETAILS,
+	READ_RAW_DATA_CHUNK,
+	DELETE_RAW_DATA_CHUNK,
+	DELETE_REC_SESSION,
+	READ_ACTIVITY_DATA_CHUNK
+	// CHEKR_CONT_REC
+} commands_list_t;
+
+typedef enum {
+	SB_MOBILE_APP_TO_DEVICE = 0x01,
+	SB_DEVICE_TO_MOBILE_APP,
+	SB_RESERVED,
+} start_byte_t;
+
+typedef enum {
+	FT_INVALID = 0xf0,
+	FT_REQUEST,
+	FT_REPORT,
+	FT_NOTIF,
+	FT_DATA_FRAME,
+} frame_type_t;
+
+typedef enum {
+	ERR_NONE = 0x11,
+	ERR_NEGATIVE_ACK,
+	ERR_BAD_CHECKSUM,
+	ERR_LENGTH_MISMATCH,
+	ERR_INVALID_START_BYTE,
+	ERR_UNRECOGNIZED_FRAME_TYPE,
+	ERR_UNRECOGNIZED_CMD,
+	ERR_INVALID_DATA,
+	ERR_CANNOT_PROCESS_OR_BUSY,
+	ERR_SLAVE_DEVICE_FAILURE,
+	ERR_TIMEOUT,
+} error_code_t;
+
+typedef enum {
+	DASH_START,
+	DASH_STOP,
+	DASH_ONCE,
+} dashboard_ctrl_t;
+
+typedef enum {
+	PET_SIZE_GIANT = 0,
+	PET_SIZE_LARGE,
+	PET_SIZE_MEDIUM,
+	PET_SIZE_SMALL,
+	PET_SIZE_TOY,
+} pet_size_t;
+
+typedef struct __attribute__((__packed__)) {
+	uint8_t start_byte;
+	uint8_t frame_len;
+	uint8_t frame_type;
+	uint8_t cmd;
+} frame_format_header_t;
+
+#define MAX_COMMAND_LEN (128)
+#define MAX_FRAME_LEN   (255)
+
+// we use this struct to hold commands
+typedef struct 
+{
+	uint8_t len;
+	uint8_t data[MAX_COMMAND_LEN];
+} CommandBufferT;
+
+void notify_tocentral(uint8_t *data, int len);
+
+void ble_data_parse_task_init(void);
+void ble_data_parse_task_delete(void);
+
+#endif // BLE_DATA_PROGRESS_H

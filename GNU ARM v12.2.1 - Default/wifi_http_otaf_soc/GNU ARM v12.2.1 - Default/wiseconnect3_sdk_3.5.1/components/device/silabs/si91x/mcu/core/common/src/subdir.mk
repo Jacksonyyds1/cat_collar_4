@@ -1,0 +1,14 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+O_SRCS += \
+../wifi_http_otaf_soc/GNU\ ARM\ v12.2.1\ -\ Default/wiseconnect3_sdk_3.5.1/components/device/silabs/si91x/mcu/core/common/src/malloc_thread_safety.o \
+../wifi_http_otaf_soc/GNU\ ARM\ v12.2.1\ -\ Default/wiseconnect3_sdk_3.5.1/components/device/silabs/si91x/mcu/core/common/src/rsi_debug.o \
+../wifi_http_otaf_soc/GNU\ ARM\ v12.2.1\ -\ Default/wiseconnect3_sdk_3.5.1/components/device/silabs/si91x/mcu/core/common/src/sl_si91x_stack_object_declare.o \
+../wifi_http_otaf_soc/GNU\ ARM\ v12.2.1\ -\ Default/wiseconnect3_sdk_3.5.1/components/device/silabs/si91x/mcu/core/common/src/syscalls.o 
+
+
+# Each subdirectory must supply rules for building sources it contributes
+

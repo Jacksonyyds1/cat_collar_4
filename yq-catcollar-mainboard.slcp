@@ -1,0 +1,88 @@
+# Silicon Labs Project Configuration Tools: slcp, v0, Component selection file.
+project_name: yq-catcollar-mainboard
+label: yq-catcollar-mainboard
+description: |
+  This application explains how to connect to a Wi-Fi access point using BLE provisioning functionality.
+category: Example|Wi-Fi_BLE
+filter:
+- name: Project Difficulty
+  value: [Intermediate]
+- name: Wireless Technology
+  value: [WiFi BLE]
+package: wifi_ble
+quality: production
+readme:
+- {path: readme.md}
+- {path: readme.md}
+source:
+- {path: app.c}
+- {path: ble_app.c}
+- {path: wifi_app.c}
+include:
+- path: .
+  file_list:
+  - {path: app.h}
+  - {path: ble_config.h}
+  - {path: wifi_config.h}
+sdk: {id: simplicity_sdk, version: 2025.6.0}
+toolchain_settings:
+- {value: -Wall -Werror, option: gcc_compiler_option}
+component:
+- {from: wiseconnect3_sdk, id: SIWG917M111MGTBA}
+- {from: wiseconnect3_sdk, id: basic_network_config_manager}
+- {from: wiseconnect3_sdk, id: ble}
+- {from: wiseconnect3_sdk, id: brd4338a}
+- {from: wiseconnect3_sdk, id: console}
+- {from: wiseconnect3_sdk, id: http_client}
+- instance: [i2c0, i2c1, i2c2]
+  from: wiseconnect3_sdk
+  id: i2c_instance
+- {from: wiseconnect3_sdk, id: mbedtls}
+- {from: wiseconnect3_sdk, id: network_manager}
+- {from: wiseconnect3_sdk, id: si91x_debug_uc}
+- {from: wiseconnect3_sdk, id: si91x_memory_default_config}
+- {from: wiseconnect3_sdk, id: sl_calendar}
+- {from: wiseconnect3_sdk, id: sl_gspi}
+- {from: wiseconnect3_sdk, id: sl_si91x_basic_buffers}
+- instance: [btn0]
+  from: wiseconnect3_sdk
+  id: sl_si91x_button_917
+- {from: wiseconnect3_sdk, id: sl_si91x_internal_stack}
+- instance: [led0, led1]
+  from: wiseconnect3_sdk
+  id: sl_si91x_led_917
+- {from: wiseconnect3_sdk, id: sl_si91x_littlefs_ext_flash}
+- {from: wiseconnect3_sdk, id: sl_usart}
+- {from: wiseconnect3_sdk, id: sleeptimer_si91x}
+- {from: wiseconnect3_sdk, id: syscalls}
+- {from: wiseconnect3_sdk, id: wifi}
+- {from: wiseconnect3_sdk, id: wifi_resources}
+- {from: wiseconnect3_sdk, id: wiseconnect3_common}
+- {id: brd4002a}
+- {id: freertos}
+- {id: freertos_heap_4}
+- {id: gatt_configuration}
+- {id: sl_main}
+other_file:
+- {path: resources/readme/image279wsbpa.png}
+- {path: resources/readme/image279wsbpancp.png}
+- {path: resources/readme/output1.png}
+- {path: resources/readme/output2.png}
+- {path: resources/readme/remote_screen1.png}
+- {path: resources/readme/remote_screen2.png}
+- {path: resources/readme/remote_screen3.png}
+- {path: resources/readme/remote_screen4.png}
+- {path: resources/readme/remote_screen5.png}
+- {path: resources/readme/remote_screen6.png}
+define:
+- {name: SL_SI91X_PRINT_DBG_LOG}
+configuration:
+- {name: SL_BOARD_ENABLE_VCOM, value: '1'}
+ui_hints:
+  highlight:
+  - {path: readme.md, focus: true}
+sdk_extension:
+- {id: wiseconnect3_sdk, version: 3.5.0}
+post_build:
+- {path: yq-catcollar-mainboard.slpb}
+

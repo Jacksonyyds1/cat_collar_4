@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ASCII"?>
+<device:XMLDevice xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:device="http://www.silabs.com/ss/hwconfig/document/device.ecore" name="pin_tool.siwg917m111mgtba" partId="mcu.arm.wfm.siwg917m111mgtba" contextId="com.silabs.sdk.stack.sisdk:2025.6.0._368399629">
+  <mode name="DefaultMode">
+    <property object="DefaultMode" propertyId="mode.diagramLocation" value="100, 100"/>
+    <property object="GPIO_10" propertyId="pin.reserve" value="Reserved"/>
+    <property object="GPIO_28" propertyId="ABModule.selectedRequirement" value="gpio%T%SL_SI91X_BUTTON_0%T%sl_si91x_button_init_btn0_config.h"/>
+    <property object="GPIO_28" propertyId="pin.reserve" value="Reserved"/>
+    <property object="GSPI_MASTER" propertyId="ABModule.selectedRequirement" value="gspi_master%T%SL_GSPI_MASTER%T%sl_si91x_gspi_common_config.h"/>
+    <property object="GSPI_MASTER" propertyId="ABPeripheral.included" value="true"/>
+    <property object="I2C0" propertyId="ABModule.selectedRequirement" value="i2c0%T%SL_I2C0%T%sl_si91x_i2c_init_i2c0_config.h"/>
+    <property object="I2C0" propertyId="ABPeripheral.included" value="true"/>
+    <property object="I2C1" propertyId="ABModule.selectedRequirement" value="i2c1%T%SL_I2C1%T%sl_si91x_i2c_init_i2c1_config.h"/>
+    <property object="I2C1" propertyId="ABPeripheral.included" value="true"/>
+    <property object="PORTIO" propertyId="portio.gspi_master.enable.cs0_" value="Enabled"/>
+    <property object="PORTIO" propertyId="portio.gspi_master.enable.miso_" value="Enabled"/>
+    <property object="PORTIO" propertyId="portio.gspi_master.enable.mosi_" value="Enabled"/>
+    <property object="PORTIO" propertyId="portio.gspi_master.enable.sck_" value="Enabled"/>
+    <property object="PORTIO" propertyId="portio.gspi_master.location.cs0_" value="7"/>
+    <property object="PORTIO" propertyId="portio.gspi_master.location.miso_" value="24"/>
+    <property object="PORTIO" propertyId="portio.gspi_master.location.mosi_" value="19"/>
+    <property object="PORTIO" propertyId="portio.gspi_master.location.sck_" value="3"/>
+    <property object="PORTIO" propertyId="portio.i2c0.enable.scl" value="Enabled"/>
+    <property object="PORTIO" propertyId="portio.i2c0.enable.sda" value="Enabled"/>
+    <property object="PORTIO" propertyId="portio.i2c1.enable.scl" value="Enabled"/>
+    <property object="PORTIO" propertyId="portio.i2c1.enable.sda" value="Enabled"/>
+    <property object="PORTIO" propertyId="portio.i2c1.location.scl" value="1"/>
+    <property object="PORTIO" propertyId="portio.i2c1.location.sda" value="7"/>
+    <property object="PORTIO" propertyId="portio.ulp_i2c.enable.scl" value="Enabled"/>
+    <property object="PORTIO" propertyId="portio.ulp_i2c.enable.sda" value="Enabled"/>
+    <property object="PORTIO" propertyId="portio.ulp_i2c.location.scl" value="2"/>
+    <property object="PORTIO" propertyId="portio.ulp_i2c.location.sda" value="6"/>
+    <property object="PORTIO" propertyId="portio.usart0.enable.rx" value="Enabled"/>
+    <property object="PORTIO" propertyId="portio.usart0.enable.tx" value="Enabled"/>
+    <property object="ULP_GPIO_2" propertyId="ABModule.selectedRequirement" value="gpio%T%SL_SI91X_LED_0%T%sl_si91x_led_init_led0_config.h"/>
+    <property object="ULP_GPIO_2" propertyId="pin.reserve" value="Reserved"/>
+    <property object="ULP_GPIO_5" propertyId="ABModule.selectedRequirement" value="gpio%T%SL_SI91X_LED_1%T%sl_si91x_led_init_led1_config.h"/>
+    <property object="ULP_I2C" propertyId="ABModule.selectedRequirement" value="ulp_i2c%T%SL_ULP_I2C%T%sl_si91x_i2c_init_i2c2_config.h"/>
+    <property object="ULP_I2C" propertyId="ABPeripheral.included" value="true"/>
+    <property object="USART0" propertyId="ABModule.selectedRequirement" value="usart0%T%SL_USART0%T%sl_si91x_usart_common_config.h"/>
+    <property object="USART0" propertyId="ABPeripheral.included" value="true"/>
+  </mode>
+  <modeTransition>
+    <property object="RESET &#x2192; DefaultMode" propertyId="modeTransition.source" value="RESET"/>
+    <property object="RESET &#x2192; DefaultMode" propertyId="modeTransition.target" value="DefaultMode"/>
+  </modeTransition>
+</device:XMLDevice>
